@@ -1,0 +1,31 @@
+ 14 # ---------------------- ALIASES ----------------------- #
+ 15
+ 16 ### ---< System >--- ###
+ 17 alias re="source $HOME/.zshrc"
+ 18 alias cp="cp -v"
+ 19 alias rm="rm -vi"
+ 20 alias ..="cd .."
+ 21 alias d="deactivate"
+ 22 alias mp="cd code/magistra && pipenv shell"
+ 23 alias mystop="brew services stop mysql"
+ 24 alias mystart="brew services start mysql"
+ 25 alias myroot="mysql -uroot"
+ 26 alias brew="/opt/homebrew/bin/brew"
+ 27 # ... rosetta terminal setup ... #
+ 28 if [ $(arch) = "i386" ]; then
+ 29     alias ibrew="/usr/local/homebrew/bin/brew"
+ 30     alias ipyenv="arch -x86_64 pyenv"
+ 31 fi
+ 32 #### ---<  Magistra >--- ###
+ 33 alias dropsite="docker exec -i mariadb mysql -u root -e 'DROP DATABASE site;'"
+ 34 alias addsite="docker exec -i mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER     SET utf8mb4 COLLATE utf8mb4_general_ci;'"
+ 35 alias mocksite="docker exec -i mariadb mysql -uroot site < ~/Documents/mock/magistra_prod/export.sql    "
+ 36
+ 37 ### ---< With Prefix. Just type file.txt and it automaticaly opens in vim >--- ###
+ 38 alias -s txt=vim
+ 39
+ 40 ### ---< Parametrized Aliases >--- ###
+ 41 # ... copy cat's output to buffer ... #
+ 42 ccp(){
+ 43 cat "$1" | pbcopy
+ 44 }
