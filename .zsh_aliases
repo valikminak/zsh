@@ -3,6 +3,8 @@
 
 
 ### >--- System >--- ###
+alias al="vim ~/.zsh_aliases"
+alias z="vim ~/.zshrc"
 alias re="source $HOME/.zshrc"
 alias cp="cp -v"
 alias rm="rm -vi"
