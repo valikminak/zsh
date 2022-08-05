@@ -32,7 +32,7 @@ alias -s txt=vim
 ccp(){
  cat "$1" | pbcopy
  }
-# ... copy zsh settings files to git-dir and push to repo
+# ... copy zsh settings files to git-dir and push to repo ... #
 zpush(){
-  cp ~/.zshrc ~/.zsh_aliases ~/Documents/git/zsh && cd ~/Documents/git/zsh && git add . && git commit -m "$1" && git push
+  cp ~/.zshrc ~/.zsh_aliases ~/Documents/git/zsh && cd ~/Documents/git/zsh && git add . && git commit -m "$1" && git push && cd -
 }
