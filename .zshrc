@@ -5,7 +5,7 @@ ZSH_THEME="agnoster"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
+source ~/.zsh_aliases
 
 # PATH
 export PATH="$HOME/.poetry/bin:$PATH"
