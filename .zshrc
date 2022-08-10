@@ -22,11 +22,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init --path)" 
 eval "$(pyenv init -)"
 
-#PIPENV
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
-
 # K8S
 
 # export KUBECONFIG=~/.kube/config:~/.kube/stage_conf
