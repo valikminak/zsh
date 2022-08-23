@@ -22,9 +22,8 @@ if [ $(arch) = "i386" ]; then
 fi
 ### ---<  Magistra >--- ###
 alias dropsite="docker exec -i mariadb mysql -u root -e 'DROP DATABASE site;'"
-alias addsite="docker exec -i mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER     SET utf8mb4 COLLATE utf8mb4_gee
-    neral_ci;'"
-alias mocksite="docker exec -i mariadb mysql -uroot site < ~/Documents/mock/magistra_prod/export.sql    "
+alias addsite="docker exec -i mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'"
+alias mocksite="docker exec -i mariadb mysql -uroot site < ~/Documents/mock/magistra_prod/export.sql"
  
  ### ---< With Prefix. Just type file.txt and it automaticaly opens in vim >--- ###
 alias -s txt=vim
