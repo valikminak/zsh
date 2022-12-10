@@ -29,5 +29,5 @@ eval "$(pyenv init -)"
 # export KUBECONFIG=~/.kube/config:~/.kube/stage_conf
 # export KUBECONFIG=~/.kube/config:~/.kube/prod_conf
 # export KUBECONFIG=~/.kube/config:~/.kube/config_int
-# export KUBECONFIG=~/.kube/config:~/.kube/config_eu
+export KUBECONFIG=~/.kube/config:~/.kube/config_eu
 

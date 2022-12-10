@@ -28,6 +28,9 @@ alias mocksite="docker exec -i mariadb mysql -uroot site < ~/Documents/mock/magi
  
 ### ---< K8S >--- ###
 alias kc="kubectl"
+context(){
+kubectl config use-context "$1"
+}
 
  ### ---< With Prefix. Just type file.txt and it automaticaly opens in vim >--- ###
 alias -s txt=vim
