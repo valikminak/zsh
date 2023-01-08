@@ -16,6 +16,7 @@ alias mystop="brew services stop mysql"
 alias mystart="brew services start mysql"
 alias myroot="mysql -uroot"
 alias brew="/opt/homebrew/bin/brew"
+alias pyenvv="pyenv install --list | grep 3."
 # ... rosetta terminal setup ... #
 if [ $(arch) = "i386" ]; then
         alias ibrew="/usr/local/homebrew/bin/brew"
