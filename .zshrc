@@ -26,8 +26,11 @@ eval "$(pyenv init -)"
 
 # K8S
 
+# export KUBECONFIG=~/.kube/config:~/.kube/config_stage
 export KUBECONFIG=~/.kube/config:~/.kube/config_stage
 # export KUBECONFIG=~/.kube/config:~/.kube/config_prod
 # export KUBECONFIG=~/.kube/config:~/.kube/config_int
 # export KUBECONFIG=~/.kube/config:~/.kube/config_eu
 
+
+source /Users/valentinminakov/.docker/init-zsh.sh || true # Added by Docker Desktop

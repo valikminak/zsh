@@ -25,7 +25,7 @@ fi
 ### ---<  Magistra >--- ###
 alias dropsite="docker exec -i mariadb mysql -u root -e 'DROP DATABASE site;'"
 alias addsite="docker exec -i mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'"
-alias mocksite="docker exec -i mariadb mysql -uroot site < ~/Documents/mock/magistra_prod/export.sql"
+alias mocksite="docker exec -i mariadb mysql -uroot site < ~/LocalDocs/mock/magistra_prod/export.sql"
  
 ### ---< K8S >--- ###
 alias kc="kubectl"
@@ -33,7 +33,10 @@ context(){
 kubectl config use-context "$1"
 }
 
- ### ---< With Prefix. Just type file.txt and it automaticaly opens in vim >--- ###
+### ---< Rust
+alias doc="rustup doc"
+
+### ---< With Prefix. Just type file.txt and it automaticaly opens in vim >--- ###
 alias -s txt=vim
 
 ### ---< Parametrized Aliases >--- ###
