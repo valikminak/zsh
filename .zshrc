@@ -24,28 +24,17 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init --path)" 
 eval "$(pyenv init -)"
 
-# K8S
+# RUST
+# export CARGO_TARGET_AARCH64_APPLE_DARWIN_LINKER=/usr/bin/clang
+# export CARGO_TARGET_AARCH64_APPLE_DARWIN_RUNNER=/usr/bin/arch
 
+
+# K8S
 # export KUBECONFIG=~/.kube/config:~/.kube/config_stage
-export KUBECONFIG=~/.kube/config:~/.kube/config_prod
+# export KUBECONFIG=~/.kube/config:~/.kube/config_prod
 # export KUBECONFIG=~/.kube/config:~/.kube/config_int
-# export KUBECONFIG=~/.kube/config:~/.kube/config_eu
+export KUBECONFIG=~/.kube/config:~/.kube/config_eu
+
 
 
 source /Users/valentinminakov/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/valentinminakov/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/valentinminakov/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/valentinminakov/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/valentinminakov/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

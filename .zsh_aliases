@@ -24,9 +24,10 @@ if [ $(arch) = "i386" ]; then
         alias ipyenv="arch -x86_64 pyenv"
 fi
 ### ---<  Magistra >--- ###
-alias dropsite="docker exec -i mariadb mysql -u root -e 'DROP DATABASE site;'"
-alias addsite="docker exec -i mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'"
-alias mocksite="docker exec -i mariadb mysql -uroot site < ~/LocalDocs/mock/magistra_prod/export.sql"
+alias dropsite="docker exec -i arm-mariadb mysql -u root -e 'DROP DATABASE site;'"
+alias addsite="docker exec -i arm-mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'"
+alias mocksite="docker exec -i arm-mariadb mysql -uroot site < ~/LocalDocs/mock/magistra_prod/export.sql"
+alias reloadcluster="docker rm -f redis-cluster && docker run --name redis-cluster -e 'IP=0.0.0.0' -p 7000-7005:7000-7005 -d --restart unless-stopped docker-redis-cluster-redis-cluster"
  
 ### ---< K8S >--- ###
 alias kc="kubectl"
@@ -34,8 +35,12 @@ context(){
 kubectl config use-context "$1"
 }
 
-### ---< Rust
+### ---< Rust >--- ###
 alias doc="rustup doc"
+
+### ---< Open IDE >--- ###
+alias pycharm="open -na 'PyCharm' --args \$PWD"
+alias rover="open -na 'RustRover 2023.2 EAP' --args \$PWD"
 
 ### ---< With Prefix. Just type file.txt and it automaticaly opens in vim >--- ###
 alias -s txt=vim
