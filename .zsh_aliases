@@ -11,24 +11,27 @@ alias rm="rm -vi"
 alias ..="cd .."
 alias d="deactivate"
 alias e="exit"
-alias mp="cd ~/code/magistra && pipenv shell"
-alias mystop="brew services stop mysql"
-alias mystart="brew services start mysql"
-alias myroot="mysql -uroot"
+alias mp="cd ~/code/magistra && poetry shell"
 alias brew="/opt/homebrew/bin/brew"
 alias pyenvv="pyenv install --list | grep 3."
 alias t="tree"
+alias r="ranger"
+alias tr="trans -I :ru"
 # ... rosetta terminal setup ... #
 if [ $(arch) = "i386" ]; then
         alias ibrew="/usr/local/homebrew/bin/brew"
         alias ipyenv="arch -x86_64 pyenv"
 fi
 ### ---<  Magistra >--- ###
-alias dropsite="docker exec -i arm-mariadb mysql -u root -e 'DROP DATABASE site;'"
-alias addsite="docker exec -i arm-mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'"
-alias mocksite="docker exec -i arm-mariadb mysql -uroot site < ~/LocalDocs/mock/magistra_prod/export.sql"
-alias reloadcluster="docker rm -f redis-cluster && docker run --name redis-cluster -e 'IP=0.0.0.0' -p 7000-7005:7000-7005 -d --restart unless-stopped docker-redis-cluster-redis-cluster"
+alias dropsite="docker exec -i mariadb mysql -u root -e 'DROP DATABASE site;'"
+alias addsite="docker exec -i mariadb mysql -u root -e 'CREATE DATABASE IF NOT EXISTS site CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'"
+alias mocksite="docker exec -i mariadb mysql -uroot site < ~/LocalDocs/mock/magistra_prod/export.sql"
+alias reloadcluster="docker rm -f redis-cluster && docker run --name redis-cluster -e 'IP=0.0.0.0' -e require_full_coverage=False -p 7000-7005:7000-7005 -d --restart unless-stopped docker-redis-cluster-redis-cluster"
  
+### ---< COPILOT >--- ###
+alias explain="gh copilot explain"
+alias suggest="gh colilot suggest"
+
 ### ---< K8S >--- ###
 alias kc="kubectl"
 context(){
@@ -40,7 +43,7 @@ alias doc="rustup doc"
 
 ### ---< Open IDE >--- ###
 alias pycharm="open -na 'PyCharm' --args \$PWD"
-alias rover="open -na 'RustRover 2023.2 EAP' --args \$PWD"
+alias rover="open -na 'RustRover 2023.3 EAP' --args \$PWD"
 
 ### ---< With Prefix. Just type file.txt and it automaticaly opens in vim >--- ###
 alias -s txt=vim
