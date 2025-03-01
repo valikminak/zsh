@@ -17,6 +17,14 @@ alias pyenvv="pyenv install --list | grep 3."
 alias t="tree"
 alias r="ranger"
 alias tr="trans -I :ru"
+alias ifconf='ifconfig | grep "inet " | grep -v 127.0.0.1'
+
+# ... git config ... #
+alias config_home='git config user.name "valentyn" && git config user.email "valikminak@gmail.com"'
+alias config_es='git config user.name "valentyn" && git config user.email "valik@esmedia.es"'
+alias config_check='git config --get user.name && git config --get user.email'
+
+
 # ... rosetta terminal setup ... #
 if [ $(arch) = "i386" ]; then
         alias ibrew="/usr/local/homebrew/bin/brew"
@@ -56,4 +64,9 @@ ccp(){
 # ... copy zsh settings files to git-dir and push to repo ... #
 zpush(){
   cp ~/.zshrc ~/.zsh_aliases ~/Documents/git/zsh && cd ~/Documents/git/zsh && git add . && git commit -m "$1" && git push && cd -
+}
+
+# ... copy nvim settings files to git-dir and push to repo ... #
+npush(){
+ cd ~/.config/nvim && git add . && git commit -m "$1" && git push
 }
